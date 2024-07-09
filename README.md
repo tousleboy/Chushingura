@@ -14,3 +14,7 @@
 <p>
   どんな時も武士の誇りを忘れず、主君の仇を討て！
 </p>
+
+<h1>公開URL</h1>
+
+https://unityroom.com/games/chushingura
