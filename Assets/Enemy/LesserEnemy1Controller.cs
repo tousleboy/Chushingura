@@ -64,11 +64,11 @@ public class LesserEnemy1Controller : MonoBehaviour
     {
         if(!attacking)
         {
-            rbody.velocity = new Vector2(transform.localScale.x * speed, rbody.velocity.y);
+            rbody.linearVelocity = new Vector2(transform.localScale.x * speed, rbody.linearVelocity.y);
         }
         else
         {
-            rbody.velocity = new Vector2(0, rbody.velocity.y);
+            rbody.linearVelocity = new Vector2(0, rbody.linearVelocity.y);
         }
     }
 

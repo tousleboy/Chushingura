@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
-        if(Input.GetButtonUp("Jump") && !onGround && rbody.velocity.y > 0)
+        if(Input.GetButtonUp("Jump") && !onGround && rbody.linearVelocity.y > 0)
         {
             jumpStop = true;
         }
@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
 
         if(onGround || axisH != 0)//走り
         {
-            rbody.velocity = new Vector2(axisH * runSpeed, rbody.velocity.y);
+            rbody.linearVelocity = new Vector2(axisH * runSpeed, rbody.linearVelocity.y);
         }
 
         if(goJump && onGround)
@@ -231,9 +231,9 @@ public class PlayerController : MonoBehaviour
     IEnumerator JumpStop()
     {
         float speed = 60.0f;
-        while(rbody.velocity.y >= 0)
+        while(rbody.linearVelocity.y >= 0)
         {
-            rbody.velocity = new Vector2(rbody.velocity.x, rbody.velocity.y - speed * Time.deltaTime);
+            rbody.linearVelocity = new Vector2(rbody.linearVelocity.x, rbody.linearVelocity.y - speed * Time.deltaTime);
             yield return null;
         }
     }

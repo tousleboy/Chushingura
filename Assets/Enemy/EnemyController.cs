@@ -96,7 +96,7 @@ public class EnemyController : MonoBehaviour
     {
         if(knockBack)
         {
-            rbody.velocity = new Vector2(0, rbody.velocity.y);
+            rbody.linearVelocity = new Vector2(0, rbody.linearVelocity.y);
             Vector2 force = new Vector2(knockBackPw * player.transform.localScale.x, 0);
             rbody.AddForce(force, ForceMode2D.Impulse);
             knockBack = false;
@@ -115,7 +115,7 @@ public class EnemyController : MonoBehaviour
             return;
         }*/
 
-        if(onGround) rbody.velocity = new Vector2(0.0f, rbody.velocity.y);
+        if(onGround) rbody.linearVelocity = new Vector2(0.0f, rbody.linearVelocity.y);
 
         if(PlayerController.gameState != "playing")
         {
@@ -134,14 +134,14 @@ public class EnemyController : MonoBehaviour
         {
             if(isPlayerNear)
             {
-                rbody.velocity = new Vector2(0.0f, rbody.velocity.y);
+                rbody.linearVelocity = new Vector2(0.0f, rbody.linearVelocity.y);
                 goAttack = true;
                 moving = false;
                 animator.SetBool("move", false);
             }
             else
             {
-                rbody.velocity = new Vector2(speed * transform.localScale.x, rbody.velocity.y);
+                rbody.linearVelocity = new Vector2(speed * transform.localScale.x, rbody.linearVelocity.y);
                 moving = true;
                 animator.SetBool("move", true);
             }

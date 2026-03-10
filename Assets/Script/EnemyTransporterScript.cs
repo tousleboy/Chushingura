@@ -25,7 +25,7 @@ public class EnemyTransporterScript : MonoBehaviour
         if(collision.gameObject.tag == "Enemy" && active)
         {
             Rigidbody2D rbody = collision.gameObject.GetComponent<Rigidbody2D>();
-            rbody.velocity = new Vector2(0, rbody.velocity.y);
+            rbody.linearVelocity = new Vector2(0, rbody.linearVelocity.y);
             collision.gameObject.transform.position = pair.transform.position;
             ets.active = false;
         }
